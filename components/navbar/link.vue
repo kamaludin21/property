@@ -1,6 +1,6 @@
 <template>
-	<NuxtLink :to="url">
-		<button :class="active ? 'text-amber-600' : 'text-slate-600'">
+	<NuxtLink :to="url" class="active-link text-slate-600">
+		<button>
 			<slot />
 			<p class="text-xs">{{ title }}</p>
 		</button>
@@ -18,4 +18,12 @@ const props = defineProps({
 })
 </script>
 
-<style></style>
+<style>
+.active-link.router-link-active {
+	@apply text-amber-600;
+}
+
+.active-link.router-link-active:hover {
+	@apply text-amber-700;
+}
+</style>
