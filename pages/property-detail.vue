@@ -46,7 +46,7 @@
 			</div>
 
 			<div class="w-full h-full grid gap-4">
-				<div class="z-0 space-y-2 w-full h-60">
+				<div class="z-0 space-y-2 pb-6 w-full h-60">
 					<p class="text-slate-600 text-sm font-medium">Lokasi</p>
 					<!-- <ClientOnly fallback="Loading maps..."> -->
 						<MapView class="w-full h-full" />
