@@ -45,15 +45,15 @@
 				</button>
 			</div>
 
-			<div class="w-full h-full space-y-5">
-				<div class=" z-0 space-y-2 h-60">
+			<div class="w-full h-full grid gap-4">
+				<div class="z-0 space-y-2 w-full h-60">
 					<p class="text-slate-600 text-sm font-medium">Lokasi</p>
 					<ClientOnly fallback="Loading maps...">
 						<MapView class="w-full h-full" />
 					</ClientOnly>
 				</div>
 
-				<div class="space-y-5">
+				<div class="z-0 space-y-2">
 					<p class="text-slate-600 text-sm font-medium">Informasi Unit</p>
 					<div class="grid grid-cols-2 gap-4">
 						<div class="flex items-center gap-2">
@@ -101,13 +101,14 @@
 							<p class="text-sm font-normal text-slate-600">1 Dapur</p>
 						</div>
 					</div>
-					<div class="relative z-0 space-y-2 pt-2">
-						<p class="text-slate-600 text-sm font-medium">Deskripsi</p>
-						<p class="text-slate-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia
+				</div>
+
+				<div class="z-0 space-y-2">
+					<p class="text-slate-600 text-sm font-medium">Informasi Unit</p>
+					<p class="text-slate-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia
 							atque
 							deserunt sit illum in sequi harum, nostrum recusandae dolor quae libero nemo a minus ipsam iusto vitae
 							placeat maiores?</p>
-					</div>
 				</div>
 
 			</div>
