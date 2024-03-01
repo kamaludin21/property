@@ -1,6 +1,6 @@
 <template>
 	<main
-		class="relative w-full-center  bg-slate-200 mx-auto h-screen main-wrapper overflow-hidden flex flex-col justify-between">
+		class="relative w-full-center bg-slate-200 mx-auto h-screen main-wrapper overflow-hidden flex flex-col justify-between">
 		<slot />
 		<!-- bottom navbar -->
 		<div class="absolute fixed bottom-0 w-full ">
@@ -38,6 +38,6 @@ onUnmounted(() => {
 }
 
 .w-full-center {
-	@apply w-full max-w-sm;
+	@apply w-full max-w-md;
 }
 </style>
