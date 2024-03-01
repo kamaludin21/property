@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full h-full ">
 		<client-only>
-			<LMap ref="map" :zoom="zoom" :center="[0.5086178514786303, 101.44782858051124]" LMarker>
+			<LMap ref="map" zoom="16" :center="[0.5086178514786303, 101.44782858051124]" LMarker>
 				<LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 					attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a>" layer-type="base"
 					name="OpenStreetMap" />
@@ -13,7 +13,6 @@
 
 <script setup>
 import { ref } from 'vue'
-const zoom = ref(16)
 </script>
 
 <style>
