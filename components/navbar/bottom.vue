@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-between bg-white shadow-2xl p-4 rounded-t-xl relative z-50">
+	<div class="flex justify-between bg-white shadow-2xl p-4 rounded-t-xl relative z-40">
 		<NavbarLink to="/" title="Beranda" :active="true">
 			<IconsHome class="w-5 h-5 mx-auto" />
 		</NavbarLink>

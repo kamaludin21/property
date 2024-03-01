@@ -38,7 +38,7 @@
 					</div>
 				</div>
 
-				<button
+				<button @click="show = !show"
 					class="bg-amber-600 hover:ring-2 ring-amber-700 text-white px-3 py-2 flex items-center gap-1 rounded-full h-fit">
 					<IconsMessage class="w-5 h-5 mt-0.5" />
 					<p class="font-light">Hubungi</p>
@@ -49,7 +49,7 @@
 				<div class="z-0 space-y-2 pb-6 w-full h-60">
 					<p class="text-slate-600 text-sm font-medium">Lokasi</p>
 					<!-- <ClientOnly fallback="Loading maps..."> -->
-						<MapView class="w-full h-full" />
+					<MapView class="w-full h-full" />
 					<!-- </ClientOnly> -->
 				</div>
 
@@ -106,9 +106,9 @@
 				<div class="z-0 space-y-2">
 					<p class="text-slate-600 text-sm font-medium">Informasi Unit</p>
 					<p class="text-slate-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia
-							atque
-							deserunt sit illum in sequi harum, nostrum recusandae dolor quae libero nemo a minus ipsam iusto vitae
-							placeat maiores?</p>
+						atque
+						deserunt sit illum in sequi harum, nostrum recusandae dolor quae libero nemo a minus ipsam iusto vitae
+						placeat maiores?</p>
 				</div>
 
 			</div>
@@ -116,4 +116,34 @@
 		<!-- Scroll helper -->
 		<div class="py-32"></div>
 	</div>
+	<div v-if="show" class="absolute top-0 w-full flex items-center justify-center h-screen bg-black/50 z-50">
+		<div class="w-[90%] bg-white rounded-md h-auto p-4">
+			<form action="" class="space-y-2">
+				<div class="text-slate-600">
+					<p class="text-lg">Formulir</p>
+					<p class="text-base">Isi formulir untuk melanjutkan</p>
+				</div>
+				<hr>
+				<input type="text" class="w-full bg-slate-100 p-1 py-2 outline-none" placeholder="Nama">
+				<input type="text" class="w-full bg-slate-100 p-1 py-2 outline-none" placeholder="Nomor telpon">
+				<div class="w-full flex gap-2 pt-4">
+					<button @click="show = !show" class="bg-white ring-1 flex-1 rounded-full ring-amber-600">Tutup</button>
+					<button class="flex-1 flex space-x-2 justify-center items-center bg-green-600 text-white py-2 rounded-full">
+						<span>Lanjutkan di WA</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" stroke-width="1.5"
+							stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+							<path
+								d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+						</svg>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </template>
+
+<script setup>
+const show = ref(false)
+</script>
