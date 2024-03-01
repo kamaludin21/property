@@ -48,9 +48,9 @@
 			<div class="w-full h-full grid gap-4">
 				<div class="z-0 space-y-2 w-full h-60">
 					<p class="text-slate-600 text-sm font-medium">Lokasi</p>
-					<ClientOnly fallback="Loading maps...">
+					<!-- <ClientOnly fallback="Loading maps..."> -->
 						<MapView class="w-full h-full" />
-					</ClientOnly>
+					<!-- </ClientOnly> -->
 				</div>
 
 				<div class="z-0 space-y-2">
