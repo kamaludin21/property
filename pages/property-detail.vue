@@ -1,15 +1,12 @@
+<script setup>
+const show = ref(false)
+</script>
+
 <template>
 	<div class="h-full bg-white border overflow-auto h-screen space-y-2 scrollbar-hide">
 		<!-- image -->
-		<div class="h-1/3 w-full relative">
-			<div class="w-full h-full">
-				<img src="https://source.unsplash.com/2d4lAQAlbDA" class="w-full h-full object-cover" alt="">
-			</div>
-			<div class="absolute bottom-2 flex justify-center w-full">
-				<div class="px-3 pt-0.5 pb-1 rounded-full bg-black/30 backdrop-blur-md w-fit">
-					<p class="text-white text-sm font-medium">1 / 1</p>
-				</div>
-			</div>
+		<div class="h-auto w-full relative">
+			<PropertyImages/>
 		</div>
 		<!-- Info -->
 		<div class="p-2 space-y-2">
@@ -23,9 +20,9 @@
 				</div>
 			</div>
 			<hr>
-			<div class="flex items-end py-2">
-				<p class="text-base font-light leading-4 text-slate-500">Rp.</p>
-				<p class="text-3xl text-baseline leading-7 font-bold text-amber-600">1.000.000.000,00</p>
+			<div class="flex items-top py-2 justify-center">
+				<p class="text-xl font-light text-slate-500">Rp.</p>
+				<p class="text-4xl line-clamp-1 font-bold text-amber-600">790.000.000,00</p>
 			</div>
 			<div class="border p-2 flex flex-row  items-center justify-between rounded-lg">
 				<div class="flex gap-2">
@@ -104,7 +101,7 @@
 				</div>
 
 				<div class="z-0 space-y-2">
-					<p class="text-slate-600 text-sm font-medium">Informasi Unit</p>
+					<p class="text-slate-600 text-sm font-medium">Deskripsi</p>
 					<p class="text-slate-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia
 						atque
 						deserunt sit illum in sequi harum, nostrum recusandae dolor quae libero nemo a minus ipsam iusto vitae
@@ -143,7 +140,3 @@
 		</div>
 	</div>
 </template>
-
-<script setup>
-const show = ref(false)
-</script>
