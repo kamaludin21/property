@@ -1,6 +1,6 @@
 <template>
 	<main
-		class="relative w-full-center bg-slate-200 mx-auto h-screen main-wrapper overflow-hidden flex flex-col justify-between">
+		class="relative w-full-center bg-slate-200 mx-auto h-screen main-wrapper overflow-hidden flex flex-col justify-between font-inter select-none">
 		<slot />
 		<!-- bottom navbar -->
 		<div class="absolute fixed bottom-0 w-full ">
