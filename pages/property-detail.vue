@@ -125,6 +125,14 @@ const router = useRouter()
 							placeat maiores?</p>
 					</div>
 				</div>
+				
+				<div class="z-0 space-y-1">
+					<p class=" text-lg font-semibold text-slate-700">Siteplan</p>
+					<hr>
+					<div class="">
+						<img src="~/assets/images/site.jpg" class="w-full h-auto border" alt="">
+					</div>
+				</div>
 
 			</div>
 		</div>
