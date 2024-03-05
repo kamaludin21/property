@@ -17,51 +17,29 @@ const router = useRouter()
 				</svg>
 			</button>
 			<div class="w-full">
-				<p class="text-center text-xl font-light text-amber-600">Message</p>
+				<p class="text-center text-xl font-light text-amber-600">Bookmark</p>
 			</div>
 		</div>
 
 		<!-- Result card -->
 		<div class="h-screen space-y-2 overflow-y-auto scrollbar-hide p-2 bg-white rounded-lg ring-1 ring-slate-200">
-			<div class="flex items-center gap-x-2 p-2 ring-1 rounded-md ring-slate-100">
-				<img src="https://source.unsplash.com/cIEb4UJ4ruk" class="w-12 h-12 object-cover rounded-md" alt="">
-				<div class="w-full">
-					<div class="flex w-full items-center justify-between">
-						<p class="text-sm font-medium text-slate-600">Hannah Greyson</p>
-						<p class="text-xs text-slate-400">1 Januari 2024</p>
+			<NuxtLink to="/property-detail" class="flex gap-x-2 p-2 bg-white shadow rounded-lg" v-for="n in 10">
+				<img src="https://source.unsplash.com/2d4lAQAlbDA" class="w-1/3 h-28 object-cover rounded-md" alt="">
+				<div class="w-2/3 h-28 flex flex-col">
+					<p class="text-base text-slate-700 font-medium">Rumah Type 32</p>
+					<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
+						<IconsLocation class="h-3 w-3" />
+						<p>Jalan Nangka, No. 24A Gg. Johari</p>
 					</div>
-					<p class="text-xs text-slate-600 font-normal line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Eos dolores eum minus labore iure laudantium et cupiditate rem reiciendis, voluptatum commodi magnam
-						sed. Dolorem maxime fugit dolorum nihil nam dicta.</p>
+					<div class="flex-1"></div>
+					<p class="text-sm text-slate-600 font-normal">Rp. <span
+							class="text-xl font-semibold text-amber-600">120.000.000</span></p>
 				</div>
-			</div>
-			<div class="flex items-center gap-x-2 p-2 ring-1 rounded-md ring-slate-100">
-				<img src="https://source.unsplash.com/RiDxDgHg7pw" class="w-12 h-12 object-cover rounded-md" alt="">
-				<div class="w-full">
-					<div class="flex w-full items-center justify-between">
-						<p class="text-sm font-medium text-slate-600">Michael Matt</p>
-						<p class="text-xs text-slate-400">18 Januari 2024</p>
-					</div>
-					<p class="text-xs text-slate-600 font-normal line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Eos dolores eum minus labore iure laudantium et cupiditate rem reiciendis, voluptatum commodi magnam
-						sed. Dolorem maxime fugit dolorum nihil nam dicta.</p>
-				</div>
-			</div>
-				<div class="flex items-center gap-x-2 p-2 ring-1 rounded-md ring-slate-100">
-					<img src="https://source.unsplash.com/-DJXxqZ7mo8" class="w-12 h-12 object-cover rounded-md" alt="">
-					<div class="w-full">
-						<div class="flex w-full items-center justify-between">
-							<p class="text-sm font-medium text-slate-600">Jennifer Lee</p>
-							<p class="text-xs text-slate-400">18 Januari 2024</p>
-						</div>
-						<p class="text-xs text-slate-600 font-normal line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Eos dolores eum minus labore iure laudantium et cupiditate rem reiciendis, voluptatum commodi magnam
-							sed. Dolorem maxime fugit dolorum nihil nam dicta.</p>
-					</div>
-				</div>
+			</NuxtLink>
+
 			<!-- Scroll helper -->
 			<div class="pb-44 pt-4">
-				<!-- <p class="text-sm text-center text-slate-400">End of list...</p> -->
+				<p class="text-sm text-center text-slate-400">End of list...</p>
 			</div>
 		</div>
 
