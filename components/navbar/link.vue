@@ -1,8 +1,8 @@
 <template>
-	<NuxtLink :to="url" class="active-link text-slate-600">
+	<NuxtLink :to="url" class="active-link text-slate-500">
 		<button>
 			<slot />
-			<p class="text-xs">{{ title }}</p>
+			<p class="text-sm font-medium">{{ title }}</p>
 		</button>
 	</NuxtLink>
 </template>

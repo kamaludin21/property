@@ -3,13 +3,18 @@
 		class="relative w-full-center bg-slate-200 mx-auto h-screen main-wrapper overflow-hidden flex flex-col justify-between font-inter select-none">
 		<slot />
 		<!-- bottom navbar -->
-		<div class="absolute fixed bottom-0 w-full ">
+		<div class="absolute bottom-0 w-full " v-if="navbar.require">
 			<NavbarBottom />
 		</div>
 	</main>
 </template>
 
 <script setup>
+import { useNavbarStore } from '@/stores/navbar'
+
+const navbar = useNavbarStore()
+navbar.include()
+
 const activemenu = ref(true)
 
 const setFullHeight = () => {

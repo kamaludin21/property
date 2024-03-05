@@ -3,10 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   css: ['@/assets/css/main.css'],
   modules: [
-    '@nuxtjs/tailwindcss',
+		'@nuxtjs/tailwindcss',
     'nuxt3-leaflet',
     'nuxt-swiper',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+		'@pinia/nuxt',
   ],
   googleFonts: {
     display: 'swap',

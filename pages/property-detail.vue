@@ -1,13 +1,25 @@
 <script setup>
+import { useNavbarStore } from '@/stores/navbar'
+
+const navbar = useNavbarStore()
+navbar.exclude()
+
 const show = ref(false)
+
+const router = useRouter()
 </script>
 
 <template>
 	<div class="h-full bg-white border overflow-auto scrollbar-hide relative">
-		<div class="absolute top-2 left-2 ">
-			<button class="p-1 bg-white/50 sticky top-5 hover:bg-white/90 rounded-lg relative z-10">
+		<div class="absolute flex justify-between top-2 w-full bg-red-200 left-0 px-2">
+			<button @click="$router.back()" class="p-1 bg-white/80 hover:bg-white/90 rounded-lg relative z-10">
 				<IconsChevronLeft class="w-6 h-6 text-amber-600 stroke-2" />
 			</button>
+
+			<button class="p-1 bg-white/80 rounded-lg relative z-10">
+				<IconsBookmark class="w-6 h-6 text-amber-600 fill-amber-600 stroke-2" />
+			</button>
+
 		</div>
 
 		<!-- image -->
@@ -52,20 +64,30 @@ const show = ref(false)
 
 			<div class="w-full h-full grid gap-4">
 				<div class="z-0 space-y-1 w-full h-auto">
-					<p class="text-lg font-medium font-semibold text-slate-700">Lokasi</p>
+					<p class="text-lg font-semibold text-slate-700">Lokasi</p>
 					<hr>
-					<div class="w-full h-60 bg-red-200">
-							<ClientOnly fallback="Loading maps...">
-						<MapView class="w-full h-full" />
-					</ClientOnly>
+					<div class="w-full h-60 bg-red-200 relative">
+						<div class="absolute w-full h-full bg-white z-20">
+						</div>
+						<ClientOnly fallback="Loading maps...">
+							<MapView class="w-full h-full" />
+						</ClientOnly>
 					</div>
-				
+					<div class="flex items-center gap-2">
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-600">Jalan KH. Ahmad Dahlan, Perum Anggrek No. 2B</p>
+							<p class="text-sm font-normal text-slate-500">Payung Sekaki, Pekanbaru</p>
+						</div>
+						<button class="bg-white hover:bg-amber-600 border border-amber-600 rounded-md p-1 group">
+							<IconsNavigation class="w-6 h-6 group-hover:text-white text-amber-600"/>
+						</button>
+					</div>
 				</div>
 
 				<div class="z-0 space-y-1">
-					<p class="text-lg font-medium font-semibold text-slate-700">Informasi Unit</p>
+					<p class="text-lg font-semibold text-slate-700">Informasi Unit</p>
 					<hr>
-					<div class="grid grid-cols-2 text-slate-500 gap-4 text-base font-roboto">
+					<div class="grid text-slate-500 gap-4 text-base font-roboto">
 						<div class="flex items-center gap-2">
 							<div class="p-1 rounded bg-amber-100">
 								<IconsBed class="h-6 w-6 text-amber-600" />
@@ -84,11 +106,17 @@ const show = ref(false)
 							</div>
 							<p class="font-normal text-slate-600">1 Dapur</p>
 						</div>
+						<div class="flex items-center gap-2">
+							<div class="p-1 rounded bg-amber-100">
+								<IconsCertificate class="h-6 w-6 text-amber-600" />
+							</div>
+							<p class="font-normal text-slate-600">Sertifikat Hak Milik</p>
+						</div>
 					</div>
 				</div>
 
 				<div class="z-0 space-y-1">
-					<p class=" text-lg font-medium font-semibold text-slate-700">Deskripsi</p>
+					<p class=" text-lg font-semibold text-slate-700">Deskripsi</p>
 					<hr>
 					<div class="text-base font-roboto text-slate-500">
 						<p class="text-slate-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia

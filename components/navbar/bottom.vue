@@ -1,16 +1,16 @@
 <template>
 	<div class="flex justify-between bg-white shadow-2xl p-4 rounded-t-xl relative z-40">
 		<NavbarLink to="/" title="Beranda" :active="true">
-			<IconsHome class="w-5 h-5 mx-auto" />
+			<IconsHome class="w-6 h-6 mx-auto" />
 		</NavbarLink>
 		<NavbarLink to="/explore" title="Explore" :active="false">
-			<IconsHomeSearch class="w-5 h-5 mx-auto" />
+			<IconsHomeSearch class="w-6 h-6 mx-auto" />
 		</NavbarLink>
 		<NavbarLink to="/message" title="Bookmark" :active="false">
-			<IconsBookmark class="w-5 h-5 mx-auto" />
+			<IconsBookmark class="w-6 h-6 mx-auto" />
 		</NavbarLink>
 		<NavbarLink to="/profile" title="Profil" :active="false">
-			<IconsUserCircle class="w-5 h-5 mx-auto" />
+			<IconsUserCircle class="w-6 h-6 mx-auto" />
 		</NavbarLink>
 	</div>
 	<!-- shadow element -->

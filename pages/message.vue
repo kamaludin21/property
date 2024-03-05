@@ -1,7 +1,15 @@
+<script setup>
+import { useNavbarStore } from '@/stores/navbar'
+
+const navbar = useNavbarStore()
+navbar.include()
+const router = useRouter()
+</script>
+
 <template>
 	<div class="p-2 border bg-slate-100 overflow-hidden h-screen space-y-2">
 		<div class="flex relative items-center">
-			<button class="absolute left-0 p-1 hover:bg-amber-400/20 rounded-md">
+			<button @click="$router.back()" class="absolute left-0 p-1 hover:bg-amber-400/20 rounded-md">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" viewBox="0 0 24 24" stroke-width="1.5"
 					stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -61,7 +69,3 @@
 		<div class="py-32"></div>
 	</div>
 </template>
-
-<script setup>
-const filter = ref(false)
-</script>

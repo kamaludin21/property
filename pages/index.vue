@@ -1,5 +1,13 @@
+<script setup>
+import { useNavbarStore } from '@/stores/navbar'
+
+const navbar = useNavbarStore()
+navbar.include()
+const router = useRouter()
+</script>
+
 <template>
-	<div class="p-2 border bg-slate-50 overflow-auto h-screen space-y-2 scrollbar-hide">
+	<div class="p-2 border bg-slate-100 overflow-auto h-screen space-y-2 scrollbar-hide">
 		<div class="-space-y-1 text-xl font-light text-slate-600">
 			<p class="">Temukan <span class="text-2xl font-semibold text-slate-700">Hunian</span></p>
 			<p class=""><span class="text-2xl font-semibold text-slate-700">Terbaik</span> Anda</p>
@@ -7,16 +15,17 @@
 
 		<!-- List Card -->
 		<div class="flex w-full gap-x-4 overflow-x-auto scrollbar-hide py-2">
-			<NuxtLink to="/property-detail" class="w-3/5 flex-none p-2 bg-white shadow rounded-lg" v-for="n in 3">
+			<NuxtLink to="/property-detail" class="w-3/5 flex-none p-2 bg-white hover:shadow-lg duration-200 border-transparent hover:border-amber-600 border rounded-lg" v-for="n in 3">
 				<img src="https://source.unsplash.com/2d4lAQAlbDA" class="w-full h-36 object-cover rounded-md" alt="">
 				<div class="py-1">
-					<p class="text-base text-slate-700 font-medium">Rumah Type 32 {{ n }}</p>
-					<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
-						<IconsLocation class="h-3 w-3" />
-						<p>Jalan Nangka, No. 24A Gg. Johari</p>
+					<p class="text-base text-slate-600 font-bold font-roboto">Rumah Type 32 {{ n }}</p>
+					<div class="inline-flex items-center gap-x-1 text-slate-500 text-sm line-clamp-1">
+						<IconsLocation class="h-4 w-4" />
+						<p>Payung Sekaki</p>
 					</div>
-					<p class="text-sm text-slate-600 font-normal">Rp. <span class="text-lg font-semibold text-amber-600">1{{ n
-					}}0.000.000</span></p>
+					<p class="text-sm text-slate-600 font-normal font-roboto">
+						<span>Rp. </span>
+						<span class="text-xl font-bold text-amber-600">790.000.000,00</span></p>
 				</div>
 			</NuxtLink>
 		</div>
@@ -45,10 +54,6 @@
 		<div class="py-32"></div>
 	</div>
 </template>
-
-<script lang="ts" setup>
-
-</script>
 
 <style>
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
