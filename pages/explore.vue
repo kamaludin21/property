@@ -104,9 +104,9 @@ const router = useRouter()
 				<p class="text-sm font-medium text-slat-600">Hasil Pencarian:</p>
 				<hr>
 				<NuxtLink to="/property-detail" class="flex gap-x-2 p-2 bg-white shadow rounded-lg" v-for="n in 10">
-					<img src="https://source.unsplash.com/2d4lAQAlbDA" class="w-1/3 h-28 object-cover rounded-md" alt="">
+					<img :src="`/images/${n}.jpg`" class="w-1/3 h-28 object-cover rounded-md" alt="">
 					<div class="w-2/3 h-28 flex flex-col">
-						<p class="text-base text-slate-700 font-medium">Rumah Type 32</p>
+						<p class="text-base text-slate-700 font-medium">Rumah Type 32	</p>
 						<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
 							<IconsLocation class="h-3 w-3" />
 							<p>Jalan Nangka, No. 24A Gg. Johari</p>

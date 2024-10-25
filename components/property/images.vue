@@ -2,15 +2,15 @@
 const data = [
 	{
 		'name': '1',
-		'images': 'https://source.unsplash.com/2d4lAQAlbDA'
+		'images': '/images/1.jpg'
 	},
 	{
-		'name': '1',
-		'images': 'https://source.unsplash.com/R-LK3sqLiBw'
+		'name': '2',
+		'images': '/images/2.jpg'
 	},
 	{
-		'name': '1',
-		'images': 'https://source.unsplash.com/bjej8BY1JYQ'
+		'name': '3',
+		'images': '/images/3.jpg'
 	}
 ];
 
@@ -34,7 +34,7 @@ const data = [
 		}">
 			<SwiperSlide v-for="slide in data" :key="slide.id">
 				<div class="relative">
-					<img class="w-full h-full object-cover" loading="lazy" :alt="slide.name" :src="slide.images" />
+					<img class="w-full h-56 object-cover bg-cover" loading="lazy" :alt="slide.name" :src="slide.images" />
 				</div>
 			</SwiperSlide>
 		</Swiper>

@@ -21,7 +21,7 @@ const router = useRouter()
 		<div class="h-screen space-y-2 overflow-y-auto scrollbar-hide p-4 bg-white rounded-lg ring-1 ring-slate-200">
 
 			<div class="flex space-x-2 ">
-				<img src="https://source.unsplash.com/GpeCY_OxtdY" class="w-16 h-16 object-cover rounded-full" alt="">
+				<img src="/images/avatar.png" class="w-16 h-16 object-cover rounded-full" alt="">
 				<div class="flex-1 text-2xl -space-y-1 font-light">
 					<p>Safiya</p>
 					<p>Amani</p>

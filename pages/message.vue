@@ -24,7 +24,7 @@ const router = useRouter()
 		<!-- Result card -->
 		<div class="h-screen space-y-2 overflow-y-auto scrollbar-hide p-2 bg-white rounded-lg ring-1 ring-slate-200">
 			<NuxtLink to="/property-detail" class="flex gap-x-2 p-2 bg-white shadow rounded-lg" v-for="n in 10">
-				<img src="https://source.unsplash.com/2d4lAQAlbDA" class="w-1/3 h-28 object-cover rounded-md" alt="">
+				<img :src="`/images/${n}.jpg`" class="w-1/3 h-28 object-cover rounded-md" alt="">
 				<div class="w-2/3 h-28 flex flex-col">
 					<p class="text-base text-slate-700 font-medium">Rumah Type 32</p>
 					<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
