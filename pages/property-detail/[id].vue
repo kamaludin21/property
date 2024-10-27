@@ -6,7 +6,37 @@ navbar.exclude()
 
 const show = ref(false)
 
-const router = useRouter()
+const route = useRoute()
+
+const idData = parseInt(route.params.id);
+
+const rusunawa = [
+	{
+		'id': 1,
+		'title': 'Rusunawa Rejosari',
+		'alamat': ' Jalan Kampung Baru, Kel. Bambu Kuning',
+		'kecamatan': 'Tenayan Raya',
+		'start_price': '175.000',
+		'end_price': '275.000',
+		'image_path': 'rejosari',
+		'lat': '0.549271',
+		'long': '101.479668',
+	},
+	{
+		'id': 2,
+		'title': 'Rusunawa Rumbai',
+		'alamat': ' Jalan Yos Sudarso, Kel. Meranti Pandak',
+		'kecamatan': 'Rumbai Pesisir',
+		'start_price': '175.000',
+		'end_price': '275.000',
+		'image_path': 'rumbai',
+		'lat': '0.553784',
+		'long': '101.435883'
+	}
+];
+
+let property = rusunawa.find((item) => item.id === idData);
+
 </script>
 
 <template>
@@ -24,29 +54,28 @@ const router = useRouter()
 
 		<!-- image -->
 		<div class="h-auto w-full relative">
-			<PropertyImages />
+
+			<PropertyImages :path="property.image_path" />
 		</div>
 		<!-- Info -->
 		<div class="space-y-4 p-2 font-inter">
 			<div class="space-y-1">
-				<p class="text-xl font-semibold text-slate-700 ">Rumah Type 32 - 4 Kamar 2 Kamar Mandi</p>
+				<p class="text-xl font-semibold text-slate-700 ">{{ property.title }}</p>
 				<div class="flex-1 flex items-center gap-1">
 					<IconsLocation class="h-5 w-5 stroke-1.7 text-amber-600" />
 					<div class="">
-						<p class="text-sm font-light text-slate-600 line-clamp-1">Payung Sekaki, Pekanbaru
+						<p class="text-sm font-light text-slate-600 line-clamp-1">{{ property.kecamatan }}, Pekanbaru
 						</p>
 					</div>
 				</div>
 			</div>
 			<hr>
 			<div class="flex items-top py-2 justify-center font-roboto">
-				<p class="text-xl font-light text-slate-500">Rp.</p>
-				<p class="text-4xl line-clamp-1 font-black text-amber-600">
-					790.000.000,00</p>
+				<p class="text-xl font-light text-slate-500">Rp. {{ property.start_price }} - Rp. {{ property.end_price }}</p>
 			</div>
 			<div class="border p-2 flex flex-row  items-center justify-between rounded-lg">
 				<div class="flex items-center gap-2">
-					<img src="~/assets/images/user.jpg" class="w-12 border object-cover rounded-full h-12" alt="">
+					<img src="/images/boy.png" class="w-12 border object-cover rounded-full h-12" alt="">
 					<div class="flex-1 -space-y-1">
 						<p class="text-lg font-semibold text-slate-600 ">Jhon F. Kennedy</p>
 						<p class="text-sm text-slate-500">
@@ -70,16 +99,16 @@ const router = useRouter()
 						<div class="absolute w-full h-full bg-white z-20">
 						</div>
 						<ClientOnly fallback="Loading maps...">
-							<MapView class="w-full h-full" />
+							<MapView :lat="property.lat" :long="property.long" class="w-full h-full" />
 						</ClientOnly>
 					</div>
 					<div class="flex items-center gap-2">
 						<div class="flex-1">
-							<p class="text-base font-medium text-slate-600">Jalan KH. Ahmad Dahlan, Perum Anggrek No. 2B</p>
-							<p class="text-sm font-normal text-slate-500">Payung Sekaki, Pekanbaru</p>
+							<p class="text-base font-medium text-slate-600">{{ property.alamat }}</p>
+							<p class="text-sm font-normal text-slate-500">{{ property.kecamatan }}, Pekanbaru</p>
 						</div>
 						<button class="bg-white hover:bg-amber-600 border border-amber-600 rounded-md p-1 group">
-							<IconsNavigation class="w-6 h-6 group-hover:text-white text-amber-600"/>
+							<IconsNavigation class="w-6 h-6 group-hover:text-white text-amber-600" />
 						</button>
 					</div>
 				</div>
@@ -119,13 +148,17 @@ const router = useRouter()
 					<p class=" text-lg font-semibold text-slate-700">Deskripsi</p>
 					<hr>
 					<div class="text-base font-roboto text-slate-500">
-						<p class="text-slate-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium mollitia
-							atque
-							deserunt sit illum in sequi harum, nostrum recusandae dolor quae libero nemo a minus ipsam iusto vitae
-							placeat maiores?</p>
+						Fasilitas :
+						<p>Lantar Dasar : R. Bersama, R. TIdur Penjaga, R. Panel, Parkir Motor, Area Komersil, R. Janitor, R. Shaft
+							Jamaah dan Area Taman Rumput.</p>
+						<p>Lantai Dua : 24 Unit Hunian T-24, R. Janitor, Shaft Panel dan R. Bersama</p>
+						<p>Lantai Tiga : 24 Unit Hunian T-24, R. Janitor, Shaft Panel dan R. Bersama</p>
+						<p>Lantai Empat : 24 Unit Hunian T-24, R. Janitor, Shaft Panel dan R. Bersama</p>
+						<p>Lantai Lima : 24 Unit Hunian T-24, R. Janitor, Shaft Panel dan R. Bersama</p>
+						<p>Lantai Atap : R. Tangki Air</p>
 					</div>
 				</div>
-				
+
 				<div class="z-0 space-y-1">
 					<p class=" text-lg font-semibold text-slate-700">Siteplan</p>
 					<hr>

@@ -1,18 +1,7 @@
 <script setup>
-const data = [
-	{
-		'name': '1',
-		'images': '/images/1.jpg'
-	},
-	{
-		'name': '2',
-		'images': '/images/2.jpg'
-	},
-	{
-		'name': '3',
-		'images': '/images/3.jpg'
-	}
-];
+const props = defineProps({
+  path: String
+})
 
 </script>
 
@@ -32,9 +21,9 @@ const data = [
 				translate: ['100%', 0, 0],
 			},
 		}">
-			<SwiperSlide v-for="slide in data" :key="slide.id">
+			<SwiperSlide v-for="n in 6" :key="n">
 				<div class="relative">
-					<img class="w-full h-56 object-cover bg-cover" loading="lazy" :alt="slide.name" :src="slide.images" />
+					<img class="w-full h-56 object-cover bg-cover" loading="lazy" :src="`/images/${path}/${n}.png`" />
 				</div>
 			</SwiperSlide>
 		</Swiper>
