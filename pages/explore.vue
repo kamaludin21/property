@@ -3,44 +3,66 @@ import { useNavbarStore } from '@/stores/navbar'
 
 const navbar = useNavbarStore()
 navbar.include()
+
 const filter = ref(false)
 
 const isMap = ref(true)
 const detail = ref(false)
+const selectedProperty = ref(null)
 
 
 import { ref } from 'vue'
 const zoom = ref(12)
 
+const rusunawa = [
+	{
+		'id': 1,
+		'title': 'Rusunawa Rejosari',
+		'alamat': ' Jalan Kampung Baru, Kel. Bambu Kuning',
+		'kecamatan': 'Tenayan Raya',
+		'start_price': '175.000',
+		'end_price': '275.000',
+		'image_path': 'rejosari',
+		'lat': '0.549271',
+		'long': '101.479668',
+	},
+	{
+		'id': 2,
+		'title': 'Rusunawa Rumbai',
+		'alamat': ' Jalan Yos Sudarso, Kel. Meranti Pandak',
+		'kecamatan': 'Rumbai Pesisir',
+		'start_price': '175.000',
+		'end_price': '275.000',
+		'image_path': 'rumbai',
+		'lat': '0.553784',
+		'long': '101.435883'
+	}
+];
 
 const location = [
 	{
-		position: [0.5086178514786303, 101.44782858051124],
-		title: 'Rumah 1'
+		id: 1,
+		position: [0.549271, 101.479668],
+		title: 'Rejosari'
 	},
 	{
-		position: [0.5005630211985309, 101.41200257896735],
-		title: 'Rumah 2'
-	},
-	{
-		position: [0.49973461185598667, 101.47662096879131],
-		title: 'Rumah 3'
-	},
-	{
-		position: [0.4927065126484524, 101.47051648833795],
-		title: 'Rumah 4'
-	},
-	{
-		position: [0.4645550299489861, 101.44099073245556],
-		title: 'Rumah 5'
-	},
-	{
-		position: [0.5308138167600058, 101.44785718731191],
-		title: 'Rumah 6'
+		id: 2,
+		position: [0.553784, 101.435883],
+		title: 'Rumbai'
 	},
 ]
 
 const router = useRouter()
+
+function showDetail(id) {
+	selectedProperty.value = rusunawa.find(property => property.id === id)
+	detail.value = true
+}
+
+function closeDetail() {
+	detail.value = false
+	selectedProperty.value = null
+}
 </script>
 
 <template>
@@ -103,17 +125,18 @@ const router = useRouter()
 			<div class="h-screen space-y-2 overflow-y-auto scrollbar-hide p-2 bg-white rounded-lg ring-1 ring-slate-200">
 				<p class="text-sm font-medium text-slat-600">Hasil Pencarian:</p>
 				<hr>
-				<NuxtLink to="/property-detail" class="flex gap-x-2 p-2 bg-white shadow rounded-lg" v-for="n in 10">
-					<img :src="`/images/${n}.jpg`" class="w-1/3 h-28 object-cover rounded-md" alt="">
+				<NuxtLink class="flex gap-x-2 p-2 bg-white shadow rounded-lg" v-for="(property, index) in rusunawa" :key="index"
+					:to="`/property-detail/${property.id}`">
+					<img :src="`/images/${property.image_path}/${index + 1}.png`" class="w-1/3 h-28 object-cover rounded-md" alt="">
 					<div class="w-2/3 h-28 flex flex-col">
-						<p class="text-base text-slate-700 font-medium">Rumah Type 32	</p>
+						<p class="text-base text-slate-700 font-medium">{{ property.title }}</p>
 						<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
 							<IconsLocation class="h-3 w-3" />
 							<p>Jalan Nangka, No. 24A Gg. Johari</p>
 						</div>
 						<div class="flex-1"></div>
-						<p class="text-sm text-slate-600 font-normal">Rp. <span
-								class="text-xl font-semibold text-amber-600">120.000.000</span></p>
+						<p class="text-base font-bold text-amber-600">Rp. {{ property.start_price }} - Rp. {{ property.end_price }}
+						</p>
 					</div>
 				</NuxtLink>
 
@@ -131,44 +154,41 @@ const router = useRouter()
 						<LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 							attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a>"
 							layer-type="base" name="OpenStreetMap" />
-						<l-marker @click="detail = !detail" v-for="data in location" :lat-lng="data.position"></l-marker>
+						<l-marker @click="showDetail(data.id)" v-for="data in location" :lat-lng="data.position"></l-marker>
 					</LMap>
 				</ClientOnly>
 			</div>
 		</div>
 
-		<div class="absolute -top-2 left-0 w-full flex items-center justify-center h-screen bg-black/50 z-50"
-			v-if="detail">
+		<div class="absolute -top-2 left-0 w-full flex items-center justify-center h-screen bg-black/50 z-50" v-if="detail">
 			<div class="bg-white w-11/12 p-2 rounded-lg">
 				<p>Informasi Property</p>
 				<hr>
 				<div class="h-auto w-full relative">
-					<PropertyImages />
+					<PropertyImages :path="selectedProperty.image_path" />
 				</div>
 				<!-- Info -->
 				<div class="space-y-4 p-2 font-inter">
 					<div class="space-y-1">
-						<p class="text-xl font-semibold text-slate-700 ">Rumah Type 32 - 4 Kamar 2 Kamar Mandi</p>
+						<p class="text-xl font-semibold text-slate-700 ">{{ selectedProperty.title }}</p>
 						<div class="flex-1 flex items-center gap-1">
 							<IconsLocation class="h-5 w-5 stroke-1.7 text-amber-600" />
 							<div class="">
-								<p class="text-sm font-light text-slate-600 line-clamp-1">Payung Sekaki, Pekanbaru
+								<p class="text-sm font-light text-slate-600 line-clamp-1">{{ selectedProperty.kecamatan }}, Pekanbaru
 								</p>
 							</div>
 						</div>
 					</div>
 					<hr>
 					<div class="flex items-top py-2 justify-center font-roboto">
-						<p class="text-xl font-light text-slate-500">Rp.</p>
-						<p class="text-4xl line-clamp-1 font-black text-amber-600">
-							790.000.000,00</p>
+						<p class="text-xl font-light text-slate-500">Rp. {{ selectedProperty.start_price }} - Rp. {{ selectedProperty.end_price }}</p>
 					</div>
 					<div class="flex flex-row gap-2 items-center">
 						<div @click="detail = !detail"
 							class="bg-white w-full flex-1 ring-inset ring-2 ring-amber-600 text-amber-600 px-3 py-2 gap-1 rounded-full h-fit">
 							<p class="font-light text-center">Tutup</p>
 						</div>
-						<NuxtLink to="property-detail"
+						<NuxtLink :to="`/property-detail/${selectedProperty.id}`"
 							class="bg-amber-600 w-full flex-1 ring-inset hover:ring-2 ring-amber-700 text-white px-3 py-2 gap-1 rounded-full h-fit">
 							<p class="font-light text-center">Selengkapnya</p>
 						</NuxtLink>

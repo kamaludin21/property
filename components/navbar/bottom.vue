@@ -6,7 +6,7 @@
 		<NavbarLink to="/explore" title="Explore" :active="false">
 			<IconsHomeSearch class="w-6 h-6 mx-auto" />
 		</NavbarLink>
-		<NavbarLink to="/message" title="Bookmark" :active="false">
+		<NavbarLink to="/bookmark" title="Bookmark" :active="false">
 			<IconsBookmark class="w-6 h-6 mx-auto" />
 		</NavbarLink>
 		<NavbarLink to="/profile" title="Profil" :active="false">
