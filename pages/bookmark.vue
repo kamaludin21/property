@@ -43,7 +43,7 @@ const rusunawa = [
 				</svg>
 			</button>
 			<div class="w-full">
-				<p class="text-center text-xl font-light text-amber-600">Bookmark</p>
+				<p class="text-center text-xl font-light text-amber-600">Pengajuan</p>
 			</div>
 		</div>
 
