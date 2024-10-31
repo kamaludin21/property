@@ -67,7 +67,7 @@ const rusunawa = [
 					<p class="text-base text-slate-700 font-medium">{{ property.title }}</p>
 					<div class="inline-flex items-center gap-x-1 text-slate-500 text-xs">
 						<IconsLocation class="h-3 w-3" />
-						<p>Jalan Nangka, No. 24A Gg. Johari</p>
+						<p>{{ property.kecamatan }}</p>
 					</div>
 					<div class="flex-1"></div>
 					<p class="text-base font-bold text-amber-600">Rp. {{ property.start_price }} - Rp. {{ property.end_price }}</p>
