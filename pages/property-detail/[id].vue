@@ -77,9 +77,9 @@ let property = rusunawa.find((item) => item.id === idData);
 				<div class="flex items-center gap-2">
 					<img src="/images/boy.png" class="w-12 border object-cover rounded-full h-12" alt="">
 					<div class="flex-1 -space-y-1">
-						<p class="text-lg font-semibold text-slate-600 ">Jhon F. Kennedy</p>
+						<p class="text-lg font-semibold text-slate-600 ">Muslim</p>
 						<p class="text-sm text-slate-500">
-							Makmur Property
+							0812-6655-8625
 						</p>
 					</div>
 				</div>
@@ -119,27 +119,61 @@ let property = rusunawa.find((item) => item.id === idData);
 					<div class="grid text-slate-500 gap-4 text-base font-roboto">
 						<div class="flex items-center gap-2">
 							<div class="p-1 rounded bg-amber-100">
-								<IconsBed class="h-6 w-6 text-amber-600" />
+								<!-- <IconsBed class="h-6 w-6 text-amber-600" /> -->
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="h-6 w-6 text-amber-600">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+									<path d="M14 12v.01" />
+									<path d="M3 21h18" />
+									<path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16" />
+								</svg>
 							</div>
-							<p class="font-normal text-slate-600">4 Kamar</p>
+							<p class="font-normal text-slate-600">288 Kamar</p>
 						</div>
 						<div class="flex items-center gap-2">
 							<div class="p-1 rounded bg-amber-100">
 								<IconsBath class="h-6 w-6 text-amber-600" />
 							</div>
-							<p class="font-normal text-slate-600">2 Kamar Mandi</p>
+							<p class="font-normal text-slate-600">1 Kamar Mandi / Kamar</p>
 						</div>
 						<div class="flex items-center gap-2">
 							<div class="p-1 rounded bg-amber-100">
 								<IconsToolsKitchen class="h-6 w-6 text-amber-600" />
 							</div>
-							<p class="font-normal text-slate-600">1 Dapur</p>
+							<p class="font-normal text-slate-600">1 Dapur / Kamar</p>
 						</div>
 						<div class="flex items-center gap-2">
 							<div class="p-1 rounded bg-amber-100">
-								<IconsCertificate class="h-6 w-6 text-amber-600" />
+								<IconsBed class="h-6 w-6 text-amber-600" />
 							</div>
-							<p class="font-normal text-slate-600">Sertifikat Hak Milik</p>
+							<p class="font-normal text-slate-600">1 Kamar Tidur / Kamar</p>
+						</div>
+						<div class="flex items-center gap-2">
+							<div class="p-1 rounded bg-amber-100">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="h-6 w-6 text-amber-600">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+									<path d="M5 10v-4a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v4" />
+									<path d="M16 15v-2a3 3 0 1 1 3 3v3h-14v-3a3 3 0 1 1 3 -3v2" />
+									<path d="M8 12h8" />
+									<path d="M7 19v2" />
+									<path d="M17 19v2" />
+								</svg>
+							</div>
+							<p class="font-normal text-slate-600">1 Ruang Tamu / Kamar</p>
+						</div>
+						<div class="flex items-center gap-2">
+							<div class="p-1 rounded bg-amber-100">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+									stroke="currentColor" class="h-6 w-6 text-amber-600">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+								</svg>
+
+							</div>
+							<p class="font-normal text-slate-600">1 Ruang Keluarga / Kamar</p>
 						</div>
 					</div>
 				</div>
@@ -159,13 +193,13 @@ let property = rusunawa.find((item) => item.id === idData);
 					</div>
 				</div>
 
-				<div class="z-0 space-y-1">
+				<!-- <div class="z-0 space-y-1">
 					<p class=" text-lg font-semibold text-slate-700">Siteplan</p>
 					<hr>
 					<div class="">
 						<img src="~/assets/images/site.jpg" class="w-full h-auto border" alt="">
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 		</div>
@@ -184,7 +218,8 @@ let property = rusunawa.find((item) => item.id === idData);
 				<input type="text" class="w-full bg-slate-100 p-1 py-2 outline-none" placeholder="Nomor telpon">
 				<div class="w-full flex gap-2 pt-4">
 					<button @click="show = !show" class="bg-white ring-1 flex-1 rounded-full ring-amber-600">Tutup</button>
-					<button class="flex-1 flex space-x-2 justify-center items-center bg-green-600 text-white py-2 rounded-full">
+					<a href="https://wa.me/081266558625" target="_blank"
+						class="flex-1 flex space-x-2 justify-center items-center bg-green-600 text-white py-2 rounded-full">
 						<span>Lanjutkan di WA</span>
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" stroke-width="1.5"
 							stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -193,7 +228,7 @@ let property = rusunawa.find((item) => item.id === idData);
 							<path
 								d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
 						</svg>
-					</button>
+					</a>
 				</div>
 			</form>
 		</div>
