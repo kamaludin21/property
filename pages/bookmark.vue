@@ -71,12 +71,18 @@ const rusunawa = [
 
 			<div class="">
 				<div v-if="activeTab == 0">
-					<img src="/images/alur.jpg" class="w-full h-auto" alt="">
+					<img src="/images/alur/alur-head.jpg" class="w-full h-auto" alt="">
+					<img src="/images/alur/alur-bagan.jpg" class="w-full h-auto" alt="">
+					<img src="/images/alur/alur-ket.jpg" class="w-full h-auto" alt="">
 					<div class="h-44">
 					</div>
 				</div>
 				<div v-if="activeTab == 1">
-					<img src="/images/syarat.jpg" class="w-full h-auto" alt="">
+					<img src="/images/syarat/syarat-head.jpg" class="w-full h-auto" alt="">
+					<img src="/images/syarat/syarat-bagan.jpg" class="w-full h-auto" alt="">
+					<img src="/images/syarat/syarat-syarat1.jpg" class="w-full h-auto" alt="">
+					<img src="/images/syarat/syarat-syarat2.jpg" class="w-full h-auto" alt="">
+					<img src="/images/syarat/syarat-syarat3.jpg" class="w-full h-auto" alt="">
 					<div class="h-44">
 					</div>
 				</div>
